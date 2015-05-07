@@ -26,7 +26,7 @@
                                         <color key="textColor" red="0.13077789670000001" green="0.52149470899999995" blue="0.0089709001130000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dBZ-Na-hfx">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dBZ-Na-hfx">
                                         <rect key="frame" x="8" y="8" width="552" height="204"/>
                                     </imageView>
                                 </subviews>
@@ -58,6 +58,9 @@
                                         <state key="normal" image="SearchIcon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="searchByString:" destination="cE0-Re-sUU" eventType="touchUpInside" id="1pG-KP-tq7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZj-QS-2kV">
                                         <rect key="frame" x="520" y="46" width="48" height="48"/>
@@ -68,18 +71,21 @@
                                         <state key="normal" image="SearchIcon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="searchByLatAndLong:" destination="cE0-Re-sUU" eventType="touchUpInside" id="u8g-vT-PQE"/>
+                                        </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abF-7y-bhh">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Phrase" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abF-7y-bhh">
                                         <rect key="frame" x="8" y="9" width="504" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eXd-uN-4Rq">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Latitude" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eXd-uN-4Rq">
                                         <rect key="frame" x="8" y="55" width="248" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yxq-fi-Spy">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Longitude" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yxq-fi-Spy">
                                         <rect key="frame" x="264" y="55" width="248" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -143,6 +149,14 @@
                             <constraint firstItem="8tS-Bs-4qP" firstAttribute="trailing" secondItem="W7G-WA-lLB" secondAttribute="trailingMargin" id="q0a-3q-Ygs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="defaultLabel" destination="bOj-64-qcM" id="ggy-IN-SBh"/>
+                        <outlet property="imageLabel" destination="Tpq-P3-Nqa" id="OuY-lQ-7xi"/>
+                        <outlet property="imageView" destination="dBZ-Na-hfx" id="HIm-fH-SUF"/>
+                        <outlet property="latitudeTextField" destination="eXd-uN-4Rq" id="6D3-0l-B8x"/>
+                        <outlet property="longitudeTextField" destination="yxq-fi-Spy" id="z9U-t8-Z1e"/>
+                        <outlet property="stringTextField" destination="abF-7y-bhh" id="7xj-5f-PRu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdf-Qj-ip9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
